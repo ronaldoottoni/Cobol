@@ -7,6 +7,6 @@ Minha idéia é mostrar um pouco do que sei sobre a linguagem, apresentar o cód
 
 ## Projeto 1 - Criptografia
 
-| File                                                                          | Descrição                                                  | Resultado                        |
-| ----------------------------------------------------------------------------- | ---------------------------------------------------------- | -------------------------------- |
-| [Crypto.cbl](./Crypto.cbl)                                                    | Encriptar e Decriptar uma palavra                          | [Resultado](./Cripto-Result.png) |
+| File                                                            | Descrição                                                | Resultado                               |
+| --------------------------------------------------------------- | ---------------------------------------------------------| --------------------------------------- |
+| [Crypto.cbl](./Crypto.cbl)                                      | Encriptar e Decriptar uma palavra                        | ![Resultado](./Cripto-Result-Short.png) |
