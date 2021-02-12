@@ -1,1 +1,1 @@
-[![cobol-Banner](cobol-Banner.jpg)]
+(cobol-Banner.jpg)
