@@ -6,6 +6,5 @@ Alguns exemplos de pequenos programas desenvolvidos com a poderosa linguagem COB
 
 | Arquivo                                                       | Descrição                                                | Resultado                                 |
 | ------------------------------------------------------------- | ---------------------------------------------------------| ----------------------------------------- |
-| [Calculos.cbl](./Calculos.cbl)                                | Cálculos Aritiméticos Básicos                            | ![Resultado](./Calculos-Result-Short.png) |
-| [Crypto.cbl](./Crypto.cbl)                                    | Encriptar e Decriptar uma palavra                        | ![Resultado](./Cripto-Result-Short.png)   |
-
+| [Calculos](./Calculos.cbl)                                | Cálculos Aritiméticos Básicos                            | ![Resultado](./Calculos-Result-Short.png) |
+| [Crypto](./Crypto.cbl)                                    | Encriptar e Decriptar uma palavra                        | ![Resultado](./Cripto-Result-Short.png)   |
