@@ -9,4 +9,4 @@ Minha idéia é mostrar um pouco do que sei sobre a linguagem, apresentar o cód
 
 | File                                                                              | Descrição                                                  |
 | --------------------------------------------------------------------------------- | ---------------------------------------------------------- |
-| [Cripto.cbl](./Cripto.cbl)                                                        | Encriptar e Decriptar uma palavra                          |
+| [Crypto.cbl](./Crypto.cbl)                                                        | Encriptar e Decriptar uma palavra                          |
