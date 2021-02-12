@@ -1,1 +1,1 @@
-(cobol-Banner.jpg)
+![COBOL Banner](./cobol-Banner.jpg)]
