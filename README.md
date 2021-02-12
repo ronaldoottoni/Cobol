@@ -2,7 +2,9 @@
 
 Alguns exemplos de pequenos programas desenvolvidos com a poderosa linguagem COBOL
 
-## Exemplos Básicos - Códigos podem ser testados em [Jdoodle](https://www.jdoodle.com/execute-cobol-online/), um compilador COBOL Online
+## Exemplos Básicos - COBOL ANSI
+
+Estes códigos podem ser testados em [Jdoodle](https://www.jdoodle.com/execute-cobol-online/), um compilador COBOL Online.
 
 | Arquivo                                                   | Descrição                                                | Resultado                                   | 
 | --------------------------------------------------------- | ---------------------------------------------------------| ------------------------------------------- |
