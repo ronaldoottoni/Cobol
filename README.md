@@ -12,5 +12,5 @@ Estes códigos podem ser testados em [Jdoodle](https://www.jdoodle.com/execute-c
 | [Calculos](./Calculos.cbl)                           | Cálculos Aritiméticos Básicos                            | ![Resultado](./Calculos-Result-Short.png)   |
 | [Strings](./Strings.cbl)                             | Manipulação de Strings (Substituição - Replace)          | ![Resultado](./Strings-Result.png)          |
 | [Condicionais](./Condicionais.cbl)                   | Exemplos Condicionais (IF/ELSE/SWITCH) e Validação Customizada)| ![Resultado](./Condicionais-Result.png)|
-| [Funções/Loop](./Funcoes_e_Loop.cbl)                 | Chamada de Funções (CALL) e Loop (PERFORM)               | ![Resultado](./Funcoes_e_Loop.png     )     |
+| [Funções/Loop](./Funcoes_e_Loop.cbl)                 | Chamada de Funções (CALL) e Loop (PERFORM)               | ![Resultado](./Funcoes_e_Loop-Result.png)   |
 | [Crypto](./Crypto.cbl)                               | Encriptar e Decriptar uma palavra                        | ![Resultado](./Cripto-Result-Short.png)     |
