@@ -1,14 +1,14 @@
 IDENTIFICATION DIVISION.
 PROGRAM-ID.  AcceptAndDisplay.
-AUTHOR.  Michael Coughlan.
+
 *> Usando o ACCEPT e DISPLAY para receber dados do estudante 
-*> e mostrar alguns campos. TambÈm mostrar como o ACCEPT
+*> e mostrar alguns campos. Tamb√©m mostrar como o ACCEPT
 *> deve ser utilizado para pegar data e hora do sistema.
 
 *> O formato YYYYMMDD no "ACCEPT  CurrentDate FROM DATE YYYYMMDD." 
-*> È o formato do comando para informar que o ano dever· conter 4 digitos.
-*> Se n„o for informado, o ano ser· fornecido pelo sistema ter·
-*> apenas 2 dÌgitos.
+*> √© o formato do comando para informar que o ano dever√° conter 4 digitos.
+*> Se n√£o for informado, o ano ser√° fornecido pelo sistema ter√°
+*> apenas 2 d√≠gitos.
 
 DATA DIVISION.
 WORKING-STORAGE SECTION.
@@ -48,9 +48,9 @@ Begin.
     ACCEPT  CurrentDate FROM DATE YYYYMMDD.
     ACCEPT  DayOfYear FROM DAY YYYYDDD.
     ACCEPT  CurrentTime FROM TIME.
-    DISPLAY "Nome È ", Initials SPACE Surname.
-    DISPLAY "Data È " CurrentDay SPACE CurrentMonth SPACE CurrentYear.
-    DISPLAY "Hoje È dia " YearDay " of the year".
-    DISPLAY "A hora È " CurrentHour ":" CurrentMinute.
+    DISPLAY "Nome √© ", Initials SPACE Surname.
+    DISPLAY "Data √© " CurrentDay SPACE CurrentMonth SPACE CurrentYear.
+    DISPLAY "Hoje √© dia " YearDay " of the year".
+    DISPLAY "A hora √© " CurrentHour ":" CurrentMinute.
 
     STOP RUN.
