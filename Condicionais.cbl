@@ -45,11 +45,37 @@
     *> Condicional Switch
       EVALUATE TRUE
         WHEN NUM1 < 2
-          DISPLAY 'NUM1 LESS THAN 2'
+          DISPLAY 'NUM1 MENOR QUE 2'
         WHEN NUM1 < 19
-          DISPLAY 'NUM1 LESS THAN 19'
+          DISPLAY 'NUM1 MENOR QUE 19'
         WHEN NUM1 < 1000
-          DISPLAY 'NUM1 LESS THAN 1000'
+          DISPLAY 'NUM1 MENOR QUE 1000'
       END-EVALUATE.
+
+      *> NOT, Negando uma condição
+      MOVE 50 TO NUM1.
+      MOVE 60 TO NUM2.
+      IF NOT NUM2 IS LESS THAN NUM1 THEN
+        DISPLAY NUM2' NÃO É MENOR QUE 'NUM1
+      END-IF
+
+      *> AND, comparando multiplas possibilidades
+      IF NUM1 IS LESS THAN NUM2 AND NUM1 IS LESS THAN 100 THEN
+         DISPLAY 'CONDIÇÃO COMBINADA'
+      ELSE
+         DISPLAY 'MULTIPLAS CONDIÇÕES FALHARAM'
+      END-IF
+
+      *> Verificando se o valor e positivo ou negativo
+      IF NEG-NUM IS POSITIVE OR NEG-NUM IS NEGATIVE THEN
+         DISPLAY 'A É NÚMERO POSITIVO'.
+
+      *> Verificando se o valor e positivo ou negativo
+      IF NEG-NUM IS NEGATIVE THEN
+         DISPLAY 'A É NÚMERO NEGATIVO'.
+
+      *> verificando se a variável é de um tipo específico de dados
+      IF CLASS1 IS ALPHABETIC OR CLASS1 IS NUMERIC THEN
+         DISPLAY 'CLASS1 É ALFABÉTICA OU NUMÉRICA'.
     STOP RUN.
 
