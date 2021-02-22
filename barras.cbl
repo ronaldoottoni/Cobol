@@ -74,7 +74,7 @@ main-logic.
 
         display bar, line 8, col 14, size 20.
 
-        display label "Tanho 2:", line 9.3, col 3,
+        display label "Tamanho 2:", line 9.3, col 3,
                 font label-font.
 
         display bar, line 10, col 14, size 20, width = 2.
