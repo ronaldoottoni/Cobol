@@ -25,4 +25,4 @@ Os códigos apresentados abaixo já exigem um compilador local (estou utilizando
 
 O código [Barras](./Barras.cbl) apresenta várias linhas em varios formatos e tamanhos que podem ser utilizados nos mais variados tipos de aplicações utilizando o COBOL Micro Focus eXtend em ambiente Windows. Código retirado da própria documentação do Micro Focus eXtend e foi traduzido e adaptado para este repositório.
 
-![Resultado](./barras-Result.png)
+![Resultado](./barras-result.png)
