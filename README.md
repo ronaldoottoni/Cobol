@@ -36,6 +36,12 @@ O código [Browser](./Browser.cbl) demonstra que é possível desenvolver um web
 
 # Componente Checkbox
 
-O código [Checkbox](./checkbox.cbl) demonstra uma utilização simples do componente CheckBox onde a simulação do preço final de um veículo sofre alterações de acordo com os opcioonais selecionados 1. Código retirado da própria documentação do Micro Focus eXtend e foi traduzido e adaptado para este repositório.
+O código [Checkbox](./checkbox.cbl) demonstra uma utilização simples do componente CheckBox onde a simulação do preço final de um veículo sofre alterações de acordo com os opcioonais selecionados. Código retirado da própria documentação do Micro Focus eXtend e foi traduzido e adaptado para este repositório.
 
 ![CheckBox](./checkbox-Result.gif)
+
+# Componente Radio Button
+
+O código [Radiobtn](./radiobtn.cbl) demonstra uma utilização simples do componente radio Button onde estaria simulando por exemplo a seleção do sabor de um sorvete. Código retirado da própria documentação do Micro Focus eXtend e foi traduzido e adaptado para este repositório.
+
+![Radiobtn](./Radio-Result.gif)
