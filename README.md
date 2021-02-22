@@ -10,5 +10,5 @@ Estes códigos podem ser testados em [Jdoodle](https://www.jdoodle.com/execute-c
 | --------------------------------------------------------- | ---------------------------------------------------------| ------------------------------------------- |
 | [HelloWorld](./HelloWorld.cbl)                            | Famoso exemplo "Olá Mundo"                               | ![Resultado](./HelloWorld-Result-Short.png) |
 | [Calculos](./Calculos.cbl)                                | Cálculos Aritiméticos Básicos                            | ![Resultado](./Calculos-Result-Short.png)   |
-| [String 1](./Strings1.cbl)                                | Manipulação de Strings (Substituição - Replace)          | ![Resultado](./Strings1-Result-Short.png)   |
+| [Strings](./Strings.cbl)                                  | Manipulação de Strings (Substituição - Replace)          | ![Resultado](./Strings-Result.png)          |
 | [Crypto](./Crypto.cbl)                                    | Encriptar e Decriptar uma palavra                        | ![Resultado](./Cripto-Result-Short.png)     |
