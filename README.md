@@ -38,4 +38,4 @@ O código [Browser](./Browser.cbl) demonstra que é possível desenvolver um web
 
 O código [Checkbox](./checkbox.cbl) demonstra uma utilização simples do componente CheckBox onde a simulação do preço final de um veículo sofre alterações de acordo com os opcioonais selecionados 1. Código retirado da própria documentação do Micro Focus eXtend e foi traduzido e adaptado para este repositório.
 
-![CheckBox](./Checkbox-Result.gif)
+![CheckBox](./checkbox-Result.gif)
