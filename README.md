@@ -45,3 +45,9 @@ O código [Checkbox](./checkbox.cbl) demonstra uma utilização simples do compo
 O código [Radiobtn](./radiobtn.cbl) demonstra uma utilização simples do componente radio Button onde estaria simulando por exemplo a seleção do sabor de um sorvete. Código retirado da própria documentação do Micro Focus eXtend e foi traduzido e adaptado para este repositório.
 
 ![Radiobtn](./Radio-Result.gif)
+
+# Componente Grid
+
+O código [Gridctl](./gridctl.cbl) demonstra uma utilização interessante do componente Grid Control onde podemos manipular o grid, alterando o tamanho da coluna, o tamanho da linha, Selecionando uma coluna inteira, selecionando uma linha inteira, alterar o valor dentro da Célula, um Bitmap animado, menu Pop Up clicando com botão direito e clicando diretamente no icone animado do Grid. Este componente é muito utilizado nos mais variados tipos de aplicações e o potencial do componente vai muito além do que apresenta este exemplo. Código retirado da própria documentação do Micro Focus eXtend e foi traduzido e adaptado para este repositório.
+
+![Gridctl](./Grid-Result.gif)
