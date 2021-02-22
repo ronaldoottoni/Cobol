@@ -17,7 +17,7 @@ Estes códigos podem ser testados em [Jdoodle](https://www.jdoodle.com/execute-c
 | [Accept e Display](./Accept_Display.cbl)             | Entrando dados e apresentando                            | ![Resultado](./Accept_Display-Result.png)   |
 | [Crypto](./Crypto.cbl)                               | Encriptar e Decriptar uma palavra                        | ![Resultado](./Cripto-Result-Short.png)     |
 
-## Exemplos Intermediários - COBOL Micro Focus eXtend
+## Exemplos com telas e seus componentes - COBOL Micro Focus eXtend
 
 Os códigos apresentados abaixo já exigem um compilador local (estou utilizando o Micro Focus eXtend 9.2.5) para Microsoft Windows.
 
@@ -33,3 +33,9 @@ O código [Barras](./Barras.cbl) apresenta várias linhas em varios formatos e t
 O código [Browser](./Browser.cbl) demonstra que é possível desenvolver um web browser próprio utilizando as ferramentas do Micro Focus eXtend. Código retirado da própria documentação do Micro Focus eXtend e foi traduzido e adaptado para este repositório.
 
 ![Browser](./browser.gif)
+
+# Componente Checkbox
+
+O código [Checkbox](./checkbox.cbl) demonstra uma utilização simples do componente CheckBox onde a simulação do preço final de um veículo sofre alterações de acordo com os opcioonais selecionados 1. Código retirado da própria documentação do Micro Focus eXtend e foi traduzido e adaptado para este repositório.
+
+![CheckBox](./Checkbox-Result.gif)
