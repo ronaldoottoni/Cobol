@@ -1,29 +1,29 @@
 ![COBOL Banner](./cobol-Banner.jpg)
 
-Alguns exemplos de pequenos programas desenvolvidos com a poderosa linguagem COBOL
+Some examples of small programs developed with the powerful COBOL language
 
-## Exemplos Básicos - COBOL ANSI
+## Basic Examples - COBOL ANSI
 
-Estes códigos podem ser testados em [Jdoodle](https://www.jdoodle.com/execute-cobol-online/), um compilador COBOL Online.
+These codes can be tested in [Jdoodle](https://www.jdoodle.com/execute-cobol-online/), an Online COBOL compiler.
 
-| Arquivo                                              | Descrição                                                | Resultado                                   | 
+| File                                                 | Description                                              | Result                                      | 
 | ---------------------------------------------------- | ---------------------------------------------------------| ------------------------------------------- |
-| [HelloWorld](./HelloWorld.cbl)                       | Famoso exemplo "Olá Mundo"                               | ![Resultado](./HelloWorld-Result-Short.png) |
-| [Calculos](./Calculos.cbl)                           | Cálculos Aritiméticos Básicos                            | ![Resultado](./Calculos-Result-Short.png)   |
-| [Strings](./Strings.cbl)                             | Manipulação de Strings (Substituição - Replace)          | ![Resultado](./Strings-Result.png)          |
-| [Condicionais](./Condicionais.cbl)                   | Exemplos Condicionais (IF/ELSE/SWITCH) e Validação Customizada)| ![Resultado](./Condicionais-Result.png)|
-| [Funções/Loop](./Funcoes_e_Loop.cbl)                 | Chamada de Funções (CALL) e Loop (PERFORM)               | ![Resultado](./Funcoes_e_Loop-Result.png)   |
-| [Loop Aninhado](./Loop_Aninhado.cbl)                 | Loop Aninhado (PERFORM)                                  | ![Resultado](./Loop_Aninhado.png)           |
-| [Accept e Display](./Accept_Display.cbl)             | Entrando dados e apresentando                            | ![Resultado](./Accept_Display-Result.png)   |
-| [Crypto](./Crypto.cbl)                               | Encriptar e Decriptar uma palavra                        | ![Resultado](./Cripto-Result-Short.png)     |
+| [HelloWorld](./HelloWorld.cbl)                       | Famous example "Hello World"                             | ![Resultado](./HelloWorld-Result-Short.png) |
+| [Calculos](./Calculos.cbl)                           | Basic Arithmetic Calculations                            | ![Resultado](./Calculos-Result-Short.png)   |
+| [Strings](./Strings.cbl)                             | String Manipulation (Replacement - Replace)              | ![Resultado](./Strings-Result.png)          |
+| [Condicionais](./Condicionais.cbl)                   | Conditional Examples and Custom Validation)              | ![Resultado](./Condicionais-Result.png)|
+| [Funções/Loop](./Funcoes_e_Loop.cbl)                 | Calling Functions and Loop                               | ![Resultado](./Funcoes_e_Loop-Result.png)   |
+| [Loop Aninhado](./Loop_Aninhado.cbl)                 | Nested Loop                                              | ![Resultado](./Loop_Aninhado.png)           |
+| [Accept e Display](./Accept_Display.cbl)             | Data entry and processing                                | ![Resultado](./Accept_Display-Result.png)   |
+| [Crypto](./Crypto.cbl)                               | Encrypt and Decrypt a Word                               | ![Resultado](./Cripto-Result-Short.png)     |
 
-## Exemplos com telas e seus componentes - COBOL Micro Focus eXtend
+## Examples with screens and their components - COBOL Micro Focus eXtend
 
-Os códigos apresentados abaixo já exigem um compilador local (estou utilizando o Micro Focus eXtend 9.2.5) para Microsoft Windows.
+The codes shown below require a local compiler (I'm using Micro Focus eXtend 9.2.5) for Microsoft Windows.
 
-# Barras, Cores e Tamanhos
+# Bars, Colors and Sizes
 
-O código [Barras](./Barras.cbl) apresenta várias linhas em varios formatos e tamanhos que podem ser utilizados nos mais variados tipos de aplicações utilizando o COBOL Micro Focus eXtend em ambiente Windows. Código retirado da própria documentação do Micro Focus eXtend e foi traduzido e adaptado para este repositório.
+The code [Barras](./Barras.cbl) presents several lines in different formats and sizes that can be used in the most varied types of applications using COBOL Micro Focus eXtend in a Windows environment. Code taken from the Micro Focus eXtend documentation itself and was translated and adapted for this repository.
 
 ![Resultado](./barras-result.png)
 
@@ -34,20 +34,20 @@ O código [Browser](./Browser.cbl) demonstra que é possível desenvolver um web
 
 ![Browser](./browser.gif)
 
-# Componente Checkbox
+# Checkbox Component
 
-O código [Checkbox](./checkbox.cbl) demonstra uma utilização simples do componente CheckBox onde a simulação do preço final de um veículo sofre alterações de acordo com os opcioonais selecionados. Código retirado da própria documentação do Micro Focus eXtend e foi traduzido e adaptado para este repositório.
+The code [Checkbox](./checkbox.cbl) demonstrates a simple use of the CheckBox component where the simulation of the final price of a vehicle changes according to the selected options. Code taken from the Micro Focus eXtend documentation itself and was translated and adapted for this repository.
 
 ![CheckBox](./checkbox-Result.gif)
 
-# Componente Radio Button
+# Radio Button Component 
 
-O código [Radiobtn](./radiobtn.cbl) demonstra uma utilização simples do componente radio Button onde estaria simulando por exemplo a seleção do sabor de um sorvete. Código retirado da própria documentação do Micro Focus eXtend e foi traduzido e adaptado para este repositório.
+The code [Radiobtn](./radiobtn.cbl) demonstrates a simple use of the Radio Button component where the simulations where would you be simulating the selection of an ice cream flavor. Code taken from the Micro Focus eXtend documentation itself and was translated and adapted for this repository.
 
 ![Radiobtn](./Radio-Result.gif)
 
-# Componente Grid
+# Grid Component
 
-O código [Gridctl](./gridctl.cbl) demonstra uma utilização interessante do componente Grid Control onde podemos manipular o grid, alterando o tamanho da coluna, o tamanho da linha, Selecionando uma coluna inteira, selecionando uma linha inteira, alterar o valor dentro da Célula, um Bitmap animado, menu Pop Up clicando com botão direito e clicando diretamente no icone animado do Grid. Este componente é muito utilizado nos mais variados tipos de aplicações e o potencial do componente vai muito além do que apresenta este exemplo. Código retirado da própria documentação do Micro Focus eXtend e foi traduzido e adaptado para este repositório.
+The code [Gridctl](./gridctl.cbl) demonstrates an interesting use of the Grid Control component where we can manipulate the grid, changing the column size, the row size, Selecting an entire column, selecting an entire row, changing the value inside the Cell, an animated Bitmap, Pop Up menu by clicking right-click and click directly on the Grid's animated icon. This component is widely used in the most varied types of applications and the component's potential goes far beyond what this example presents. Code taken from the Micro Focus eXtend documentation itself and was translated and adapted for this repository.
 
 ![Gridctl](./Grid-Result.gif)
