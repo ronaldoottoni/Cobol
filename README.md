@@ -9,11 +9,11 @@ These codes can be tested in [Jdoodle](https://www.jdoodle.com/execute-cobol-onl
 | File                                                 | Description                                              | Result                                      | 
 | ---------------------------------------------------- | ---------------------------------------------------------| ------------------------------------------- |
 | [HelloWorld](./HelloWorld.cbl)                       | Famous example "Hello World"                             | ![Resultado](./HelloWorld-Result-Short.png) |
-| [Calculos](./Calculos.cbl)                           | Basic Arithmetic Calculations                            | ![Resultado](./Calculos-Result-Short.png)   |
+| [Calculations](./Calculos.cbl)                       | Basic Arithmetic Calculations                            | ![Resultado](./Calculos-Result-Short.png)   |
 | [Strings](./Strings.cbl)                             | String Manipulation (Replacement - Replace)              | ![Resultado](./Strings-Result.png)          |
 | [Condicionais](./Condicionais.cbl)                   | Conditional Examples and Custom Validation)              | ![Resultado](./Condicionais-Result.png)|
-| [Funções/Loop](./Funcoes_e_Loop.cbl)                 | Calling Functions and Loop                               | ![Resultado](./Funcoes_e_Loop-Result.png)   |
-| [Loop Aninhado](./Loop_Aninhado.cbl)                 | Nested Loop                                              | ![Resultado](./Loop_Aninhado.png)           |
+| [Function/Loop](./Funcoes_e_Loop.cbl)                | Calling Functions and Loop                               | ![Resultado](./Funcoes_e_Loop-Result.png)   |
+| [Nested Loop](./Loop_Aninhado.cbl)                   | Nested Loop                                              | ![Resultado](./Loop_Aninhado.png)           |
 | [Accept e Display](./Accept_Display.cbl)             | Data entry and processing                                | ![Resultado](./Accept_Display-Result.png)   |
 | [Crypto](./Crypto.cbl)                               | Encrypt and Decrypt a Word                               | ![Resultado](./Cripto-Result-Short.png)     |
 
@@ -30,7 +30,7 @@ The code [Barras](./Barras.cbl) presents several lines in different formats and 
 
 # Web Browser
 
-O código [Browser](./Browser.cbl) demonstra que é possível desenvolver um web browser próprio utilizando as ferramentas do Micro Focus eXtend. Código retirado da própria documentação do Micro Focus eXtend e foi traduzido e adaptado para este repositório.
+The Code [Browser](./Browser.cbl) demonstrates that it is possible to develop your own web browser using the Micro Focus eXtend tools. Code taken from the Micro Focus eXtend documentation itself and was translated and adapted for this repository.
 
 ![Browser](./browser.gif)
 
