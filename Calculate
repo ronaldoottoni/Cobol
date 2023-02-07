@@ -1,0 +1,279 @@
+      *----------------------------------------------------------------*
+      * PROGRAMA..: JUGCALC                                            *
+      * AUTOR.....: RONALDO OTTONI                                     *
+      * DATA......: 06/02/2023                                         *
+      * FINALIDADE: REALIZAR CALCULOS MATEMATICOS                      *
+      *----------------------------------------------------------------*
+
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. JUGCALC.
+       ENVIRONMENT DIVISION.                         
+       SPECIAL-NAMES.                                
+           DECIMAL-POINT                IS COMMA     
+           CONSOLE                      IS CRT.
+
+       INPUT-OUTPUT SECTION.
+
+       WORKING-STORAGE SECTION.
+
+      * Area de Trabalho ==============================================*
+
+       01  WS-TABELA.
+           05  WS-EXPRESSAO             PIC  X(050)        VALUE SPACES.
+           05  WS-BLANK-COUNT           PIC  9(004)        COMP.
+           05  WS-TAM                   PIC  9(003)        VALUE ZEROS.
+           05  WS-SUB-EXPRESS           PIC  X(050)        VALUE SPACES.
+           05  WS-SUB-TAM               PIC  9(003)        VALUE ZEROS.
+           05  WS-NEW-EXPRESS           PIC  X(050)        VALUE SPACES.
+           05  WS-POSICAO.
+                10 WS-POSI-INI          PIC  9(004).
+                10 WS-POSI-FIN          PIC  9(004).
+
+           05 WS-CALCULO.
+              10 WS-NUMERO-1            PIC S9(006)V99999.
+              10 WS-NUMERO-2            PIC S9(006)V99999.
+              10  WS-RESULTADO          PIC S9(006)V99999.
+              10  WX-RESULTADO          PIC -ZZZZZ9,9999 BLANK ZEROS.
+
+            05 WS-NUMEROS               OCCURS 050.
+               10 WS-NUMERO             PIC S9(006)V99999.
+
+            05 WS-OPERADORES            OCCURS 050.
+               10 WS-OPERAND            PIC  X(001).
+
+            05 WS-VALORES               OCCURS 050.
+               10 WS-VALOR              PIC S9(006)V99999.
+
+            05 WS-NIVEIS.
+               10 WS-NIVEL              PIC  X(001)        VALUE SPACE.
+               10 WS-NVL-INI            PIC  9(003)        VALUE ZEROS.
+               10 WS-NVL-TAM            PIC  9(003)        VALUE ZEROS.
+
+       01  AC-ACUMULADORES.
+           05  AC-IDX                   PIC  9(003)        VALUE ZEROS.
+           05  AC-IDX-2                 PIC  9(003)        VALUE ZEROS.
+           05  AC-IDX-3                 PIC  9(003)        VALUE ZEROS.
+           05  AC-IDX-NUM               PIC  9(003)        VALUE ZEROS.
+           05  AC-IDX-OPE               PIC  9(003)        VALUE ZEROS.
+           05  AC-IDX-AUX               PIC  9(003)        VALUE ZEROS.
+           05  AC-IDX-NVL               PIC  9(003)        VALUE ZEROS.
+
+       COPY "/win2/fontes/fds/FUGJUG".
+      * AREA DE Comunicacao ===========================================*
+
+       LINKAGE SECTION.
+
+       01  WL-PARAMETROS.
+           05  WL-EXPRESSAO             PIC  X(050).
+           05  WL-OPERACAO              PIC  X(001).
+      * 1 = CALCULA EXPRESSAO MATEMATICA
+           05  WL-RESULTADO             PIC S9(012)V9(005).
+
+      * Inicio ========================================================*
+
+       PROCEDURE DIVISION USING WL-PARAMETROS.
+
+       010-INICIO.
+      *    MOVE "25+10-((2*5)/3)+15+(1*2)+1" 
+      *                                 TO WL-EXPRESSAO
+      *    MOVE "1"                     TO WL-OPERACAO.
+
+       011-DIRECIONA.
+           IF WL-OPERACAO = "1"
+              MOVE WL-EXPRESSAO         TO WS-EXPRESSAO
+              PERFORM 015-CALCULA-EXPRESSAO
+           END-IF
+
+           GO 990-SAI-PROGRAMA.
+
+      *    OPERACAO 1 - CALCULO DE EXPRESSAO MATEMATICA
+       015-CALCULA-EXPRESSAO.
+           *> CALCULA TAMANHO DA EXPRESSAO COMPLETA
+           MOVE ZEROS TO WS-BLANK-COUNT
+           INSPECT FUNCTION REVERSE (WS-EXPRESSAO) 
+                   TALLYING WS-BLANK-COUNT FOR LEADING SPACES
+
+           COMPUTE WS-TAM = 50 - WS-BLANK-COUNT
+
+           MOVE "N"                TO WS-NIVEL.
+
+           PERFORM 800-VERIFICA-NIVEIS.
+
+           IF  WS-NIVEL = "S"
+               MOVE WS-EXPRESSAO(WS-NVL-INI + 1:WS-NVL-TAM - 2)
+                                       TO WS-SUB-EXPRESS
+
+               PERFORM 800-CALCULA-EXPRESSAO
+               MOVE WS-RESULTADO                 TO WX-RESULTADO
+       
+               MOVE SPACES      TO WS-NEW-EXPRESS
+               MOVE SPACES      TO WS-EXPRESSAO(WS-NVL-INI :WS-NVL-TAM)
+               STRING  WS-EXPRESSAO(1:WS-NVL-INI - 1)
+                       WX-RESULTADO DELIMITED BY SIZE
+                       WS-EXPRESSAO(WS-NVL-INI + WS-NVL-TAM:)
+                       DELIMITED BY " " INTO WS-NEW-EXPRESS
+               END-STRING
+
+               INITIALIZE WC-JUGTXT
+               MOVE WS-NEW-EXPRESS      TO WC-JUGTXT-TEXTO
+               MOVE "2"                 TO WC-JUGTXT-OPERACAO
+               CALL "JUGTXT" USING WC-JUGTXT
+               MOVE SPACES              TO WS-EXPRESSAO
+               MOVE WC-JUGTXT-TEXTO-RETORNO  
+                                        TO WS-EXPRESSAO
+
+               GO 015-CALCULA-EXPRESSAO
+           END-IF
+
+           MOVE WS-EXPRESSAO            TO WS-SUB-EXPRESS
+           PERFORM 800-CALCULA-EXPRESSAO
+           MOVE WS-RESULTADO         TO WL-RESULTADO
+                                        WX-RESULTADO.
+
+      *    OPERACAO 2 - CONTINUAR AQUI
+      *    015-PROXIMA-OPERACAO
+      *================================================================*
+      *    FUNCOES PARA USO DA OPCAO 4 (CALCULO DE EXPRESSAO)          *
+      *================================================================*
+
+       800-VERIFICA-NIVEIS.
+           *> VERIFICA SE POSSUI NIVEIS NA EXPRESSAO "( )"
+           INITIALIZE AC-IDX-NVL
+           PERFORM VARYING AC-IDX FROM 1 BY 1 UNTIL AC-IDX > WS-TAM
+               IF WS-EXPRESSAO(AC-IDX:1) = "("
+                  MOVE "S"           TO WS-NIVEL
+                  MOVE AC-IDX        TO WS-NVL-INI
+               END-IF
+               IF WS-EXPRESSAO(AC-IDX:1) = ")"
+                  COMPUTE WS-NVL-TAM = AC-IDX - WS-NVL-INI + 1
+                  EXIT PERFORM
+               END-IF
+           END-PERFORM.
+      *----------------------------------------------------------------*
+
+       800-CALCULA-EXPRESSAO.
+      *>   CALCULA TAMANHO DA SUB EXPRESSAO COMPLETA
+           MOVE ZEROS              TO WS-BLANK-COUNT
+           
+           INSPECT FUNCTION REVERSE (WS-SUB-EXPRESS) 
+                   TALLYING WS-BLANK-COUNT FOR LEADING SPACES
+           
+           COMPUTE WS-SUB-TAM = 50 - WS-BLANK-COUNT.
+       
+      *>   IDENTIFICAR QTDE DE NUMEROS E OPERADORES
+           MOVE ZEROS           TO WS-POSICAO
+                                   AC-IDX-NUM
+                                   AC-IDX-2
+                                   AC-IDX-OPE
+                                   WS-POSI-INI
+                                   WS-POSI-FIN
+
+           PERFORM VARYING AC-IDX-2 FROM 1 BY 1 
+             UNTIL AC-IDX-2 > WS-SUB-TAM
+               IF  WS-SUB-EXPRESS(AC-IDX-2:1) IS NUMERIC OR
+                   WS-SUB-EXPRESS(AC-IDX-2:1) = "," OR
+                   WS-SUB-EXPRESS(AC-IDX-2:1) = "."
+                   IF WS-POSI-INI = ZEROS
+                     MOVE AC-IDX-2      TO WS-POSI-INI
+                   END-IF
+                   ADD 1                TO WS-POSI-FIN
+               END-IF
+
+               IF  WS-SUB-EXPRESS(AC-IDX-2:1) = "+" OR "-" OR "*" OR "/"
+                   ADD 1                TO AC-IDX-NUM
+                   MOVE FUNCTION 
+                        NUMVAL(WS-SUB-EXPRESS(WS-POSI-INI:WS-POSI-FIN))
+                                        TO WS-NUMERO(AC-IDX-NUM)
+                   MOVE ZEROS           TO WS-POSICAO
+                   ADD 1                TO AC-IDX-OPE
+                   MOVE WS-SUB-EXPRESS(AC-IDX-2:1)
+                                        TO WS-OPERAND(AC-IDX-OPE)
+               END-IF
+           END-PERFORM.
+
+           IF  WS-SUB-EXPRESS(WS-POSI-INI:1) IS NUMERIC OR
+               WS-SUB-EXPRESS(WS-POSI-INI:1) = "," OR
+               WS-SUB-EXPRESS(WS-POSI-INI:1) = "."
+               ADD 1                    TO AC-IDX-NUM
+               MOVE FUNCTION 
+                    NUMVAL(WS-SUB-EXPRESS(WS-POSI-INI:WS-POSI-FIN))
+                                        TO WS-NUMERO(AC-IDX-NUM)
+               MOVE ZEROS               TO WS-POSICAO
+           END-IF.
+
+           *> VERIFICAR SE NOS OPERADORES POSSUEM * OU /
+           MOVE ZEROS TO AC-IDX-AUX
+           PERFORM VARYING AC-IDX-2 FROM 1 BY 1 
+             UNTIL AC-IDX-2 > AC-IDX-OPE
+               IF WS-OPERADORES(AC-IDX-2) = SPACES
+                  EXIT PERFORM
+               END-IF
+               IF WS-OPERADORES(AC-IDX-2) = "*" OR "/"
+                  MOVE WS-NUMEROS(AC-IDX-2)     TO WS-NUMERO-1
+                  MOVE WS-NUMEROS(AC-IDX-2 + 1) TO WS-NUMERO-2
+                  EVALUATE WS-OPERADORES(AC-IDX-2)
+                   WHEN "*"
+                       ADD 1 TO AC-IDX-AUX
+                       
+                       MULTIPLY WS-NUMERO-1 BY WS-NUMERO-2 
+                         GIVING WS-RESULTADO
+                   WHEN "/"
+                       ADD 1 TO AC-IDX-AUX
+                       
+                       DIVIDE WS-NUMERO-1 BY WS-NUMERO-2 
+                       GIVING WS-RESULTADO
+                  END-EVALUATE
+                  MOVE WS-RESULTADO TO WS-VALOR(AC-IDX-AUX)
+                                       WS-NUMEROS(AC-IDX-2)
+                  MOVE ZEROS        TO WS-NUMEROS(AC-IDX-2 + 1)
+                  MOVE SPACES       TO WS-OPERADORES(AC-IDX-2)
+                  PERFORM 800-MOVE-ELEMENTOS
+                  SUBTRACT 1 FROM AC-IDX-2
+               END-IF
+           END-PERFORM.
+
+           *> CALCULOS + E -
+           PERFORM VARYING AC-IDX-2 FROM 1 BY 1 
+             UNTIL AC-IDX-2 > WS-SUB-TAM
+               IF WS-OPERADORES(AC-IDX-2) = "+" OR "-"
+                  MOVE WS-NUMEROS(AC-IDX-2)     TO WS-NUMERO-1
+                  MOVE WS-NUMEROS(AC-IDX-2 + 1) TO WS-NUMERO-2
+                  EVALUATE WS-OPERADORES(AC-IDX-2)
+                     WHEN "+"
+                          ADD 1 TO AC-IDX-AUX
+                          COMPUTE WS-RESULTADO = WS-NUMERO-1 + 
+                                                 WS-NUMERO-2
+                     WHEN "-"
+                          ADD 1 TO AC-IDX-AUX
+                          COMPUTE WS-RESULTADO = WS-NUMERO-1 - 
+                                                 WS-NUMERO-2
+                  END-EVALUATE
+                  MOVE WS-RESULTADO TO WS-VALOR(AC-IDX-AUX)
+                                       WS-NUMEROS(AC-IDX-2 + 1)
+                  MOVE ZEROS        TO WS-NUMEROS(AC-IDX-2)
+               END-IF
+           END-PERFORM.
+      *----------------------------------------------------------------*
+      
+       800-MOVE-ELEMENTOS.
+           PERFORM VARYING AC-IDX-3 FROM 1 BY 1 
+             UNTIL AC-IDX-3 > WS-TAM
+               IF WS-NUMERO(AC-IDX-3) = ZEROS
+                  MOVE WS-NUMERO(AC-IDX-3 + 1 ) 
+                                        TO WS-NUMERO(AC-IDX-3)
+                  MOVE ZEROS            TO WS-NUMERO(AC-IDX-3 + 1)
+               END-IF
+           END-PERFORM.
+           PERFORM VARYING AC-IDX-3 FROM 1 BY 1 UNTIL AC-IDX-3 > WS-TAM
+               IF WS-OPERAND(AC-IDX-3) = SPACES
+                  MOVE WS-OPERAND(AC-IDX-3 + 1)  
+                                        TO WS-OPERAND(AC-IDX-3)
+                  MOVE SPACES           TO WS-OPERAND(AC-IDX-3 + 1)
+           END-PERFORM.
+      *================================================================*
+      *    FINAL DASFUNCOES PARA USO DA OPCAO 4 (CALCULO DE EXPRESSAO) *
+      *================================================================*
+
+      *================================================================*
+       990-SAI-PROGRAMA.
+           EXIT PROGRAM.
