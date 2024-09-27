@@ -16,6 +16,7 @@ These codes can be tested in [Jdoodle](https://www.jdoodle.com/execute-cobol-onl
 | [Nested Loop](./Loop_Aninhado.cbl)                   | Nested Loop                                              | ![Resultado](./Loop_Aninhado.png)           |
 | [Accept e Display](./Accept_Display.cbl)             | Data entry and processing                                | ![Resultado](./Accept_Display-Result.png)   |
 | [Crypto](./Crypto.cbl)                               | Encrypt and Decrypt a Word                               | ![Resultado](./Cripto-Result-Short.png)     |
+| [JobCalc](./JOBCALC.COB)                             | Mathematic Expression Solving                            | ![Resultado](./jobcalc.png)     |
 
 ## Examples with screens and their components - COBOL Micro Focus eXtend
 
